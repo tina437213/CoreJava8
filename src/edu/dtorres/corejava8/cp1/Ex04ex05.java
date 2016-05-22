@@ -10,7 +10,6 @@ package edu.dtorres.corejava8.cp1;
  */
 public class Ex04ex05 {
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		System.out.println(String.format("Min double: %e", Double.MIN_VALUE));
 		System.out.println(String.format("Max double: %e", Double.MAX_VALUE));
 		int i = (int) Double.MAX_VALUE;
