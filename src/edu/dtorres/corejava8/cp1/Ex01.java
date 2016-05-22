@@ -20,7 +20,7 @@ public class Ex01 {
 		// Calculate reciprocal.
 		// + "Hex Float Input: %a \n"
 		// Reciprocal = 1/integer
-		float reciprocal = 1/i;
+		float reciprocal = 1f/i;
 		
 		String unformattedMsg = "Decimal Input: %d \n" 
 				+ "Binary: %s \n"
