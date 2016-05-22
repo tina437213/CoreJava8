@@ -11,7 +11,8 @@ import java.util.Scanner;
  */
 public class Ex11 {
 	public static void main(String... args) {
-		System.out.println("String ASCII analyzer.\n Write an string:");
+		System.out.println("String ASCII analyzer.");
+		System.out.println("Write a string:");
 		Scanner scanner = new Scanner(System.in);
 		String received = scanner.nextLine();
 		for (int i = 0; i < received.length(); i++) {
