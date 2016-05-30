@@ -8,10 +8,16 @@ import java.util.Arrays;
  * element as a linked list of nodes. Make Node a nested class. Should it be
  * static or not?
  * 
+ * Should not be static, because each node needs to know to which queue it
+ * belongs.
+ * 
  * 17 - Provide an iterator - an object that yields the elements of the queue in
  * turn - for the queue of the preceding class. Make Iterator a nested class
  * with methods next and hasNext. Provide a method iterator() of the Queue class
  * that yields a Queue.Iterator Should Iterator be static or not?
+ * 
+ * Should be static, because does not have to rememver to which queue it
+ * belongs.
  * 
  * @author diego
  *
@@ -25,6 +31,14 @@ public class Queue {
 		queue.add("One");
 		queue.add("Two");
 		queue.add("Three");
+		queue.add("Four");
+		queue.add("Five");
+		queue.add("Six");
+
+		Iterator it = queue.getIterator();
+		while (it.hasNext()) {
+			System.out.println(it.next());
+		}
 
 		Node n = null;
 		while ((n = queue.remove()) != null) {
@@ -75,6 +89,30 @@ public class Queue {
 		}
 	}
 
+	public Iterator getIterator() {
+		if (nodes == null)
+			return null;
+		return new Iterator(nodes[0]);
+	}
+
+	public static class Iterator {
+		private Node currentNode;
+
+		private Iterator(Node currentNode) {
+			this.currentNode = currentNode;
+		}
+
+		public boolean hasNext() {
+			return currentNode != null;
+		}
+
+		public Node next() {
+			Node temp = currentNode;
+			currentNode = currentNode.getNext();
+			return temp;
+		}
+	}
+
 	public class Node {
 		private Node previous;
 		private Node next;
@@ -107,5 +145,11 @@ public class Queue {
 		public void setContent(String content) {
 			this.content = content;
 		}
+
+		@Override
+		public String toString() {
+			return "Node [content=" + content + "]";
+		}
+
 	}
 }
