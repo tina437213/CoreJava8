@@ -16,8 +16,7 @@ import java.util.Arrays;
  * with methods next and hasNext. Provide a method iterator() of the Queue class
  * that yields a Queue.Iterator Should Iterator be static or not?
  * 
- * Should be static, because does not have to rememver to which queue it
- * belongs.
+ * Should not be static, because it needs access to the outer class nodes.
  * 
  * @author diego
  *
