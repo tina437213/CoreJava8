@@ -10,22 +10,25 @@ package edu.dtorres.corejava8.cp3.ex0102;
  * largest(Measurable[] objects). Use it to find the name of the employee with
  * the largest salary. Why do you need a cast?
  * 
+ * You need to cast to have access to the employee getName method, as Measurable
+ * only knows the Measurable methods.
+ * 
  * @author diego
  *
  */
 public class Program {
 	public static void main(String... args) {
 		Employee[] employees = new Employee[10];
-		employees[0] = new Employee("Employee 1", Math.random()*150_000);
-		employees[1] = new Employee("Employee 2", Math.random()*150_000);
-		employees[2] = new Employee("Employee 3", Math.random()*150_000);
-		employees[3] = new Employee("Employee 4", Math.random()*150_000);
-		employees[4] = new Employee("Employee 5", Math.random()*150_000);
-		employees[5] = new Employee("Employee 6", Math.random()*150_000);
-		employees[6] = new Employee("Employee 7", Math.random()*150_000);
-		employees[7] = new Employee("Employee 8", Math.random()*150_000);
-		employees[8] = new Employee("Employee 9", Math.random()*150_000);
-		employees[9] = new Employee("Employee 10", Math.random()*150_000);
+		employees[0] = new Employee("Employee 1", Math.random() * 150_000);
+		employees[1] = new Employee("Employee 2", Math.random() * 150_000);
+		employees[2] = new Employee("Employee 3", Math.random() * 150_000);
+		employees[3] = new Employee("Employee 4", Math.random() * 150_000);
+		employees[4] = new Employee("Employee 5", Math.random() * 150_000);
+		employees[5] = new Employee("Employee 6", Math.random() * 150_000);
+		employees[6] = new Employee("Employee 7", Math.random() * 150_000);
+		employees[7] = new Employee("Employee 8", Math.random() * 150_000);
+		employees[8] = new Employee("Employee 9", Math.random() * 150_000);
+		employees[9] = new Employee("Employee 10", Math.random() * 150_000);
 
 		System.out.printf("Average salary: %.2f, largest from: %s", average(employees),
 				((Employee) largest(employees)).getName());
