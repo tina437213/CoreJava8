@@ -26,7 +26,8 @@ public class Ex15 {
 			for(int j = 1; j < i; j++){
 				pascal.get(i).add(pascal.get(i-1).get(j-1) + pascal.get(i-1).get(j));
 			}
-			pascal.get(i).add(1);
+			if(pascal.get(i).size() < i+1)
+				pascal.get(i).add(1);
 		}
 		
 		// Print the triangle
